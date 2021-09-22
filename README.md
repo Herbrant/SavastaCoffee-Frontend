@@ -1,4 +1,5 @@
 # savasta-coffee
+[![CodeFactor](https://www.codefactor.io/repository/github/herbrant/savastacoffee-backend/badge/main)](https://www.codefactor.io/repository/github/herbrant/savastacoffee-backend/overview/main)
 
 ## Project setup
 ```
