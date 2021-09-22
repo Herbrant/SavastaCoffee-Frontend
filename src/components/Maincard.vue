@@ -2,8 +2,12 @@
   <b-container fluid="sm">
     <b-row>
       <b-col cols="sm-4" class="mx-auto">
-        <b-img class="main_image" src="@/assets/fry.png"></b-img>
-        <h1>{{ msg }}</h1>
+        <b-card title="test">
+			<b-card-body>
+				<p>Coffee:</p>
+				<p>Status:</p>
+			</b-card-body>
+		</b-card>
       </b-col>
     </b-row>
   </b-container>
@@ -11,9 +15,10 @@
 
 <script>
 export default {
-  name: 'Homepage',
+  name: 'Maincard',
   props: {
-    msg: String
+    title: String,
+	body: String
   }
 }
 </script>
@@ -33,9 +38,5 @@ li {
 }
 a {
   color: #42b983;
-}
-
-.main_image {
-  max-width: 20rem;
 }
 </style>
