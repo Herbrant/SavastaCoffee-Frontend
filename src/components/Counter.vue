@@ -1,34 +1,24 @@
 <template>
-  <b-container fluid="sm">
-    <b-row>
-      <b-col cols="sm-4" class="mx-auto">
-        <b-img class="main_image" src="@/assets/fry.png"></b-img>
-        <div class="heading">{{ msg }}</div>
-      </b-col>
-    </b-row>
-  </b-container>
+	<div class="counter-container">
+		<div class="counter">
+			<img src="@/assets/coffee.svg" alt="Coffee" class="icon">
+			<h3 data-target="1200" class="count">0</h3>
+			<h6>Cups of Coffee</h6>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'Homepage',
-  props: {
-    msg: String
-  }
+  name: 'Counter'
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  background: #fbf7f4;
 }
 
 .container {
@@ -64,9 +54,19 @@ body {
   padding-bottom: 1rem;
 }
 
+
+h6 {
+	display: block;
+	font-size: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+
 .icon {
-  height: 5rem;
-  width: auto;
+  height: auto;
+  width: 5rem;
 }
 
 .main_image {

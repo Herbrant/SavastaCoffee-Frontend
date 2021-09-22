@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <Homepage msg="SavastaCoffee"/>
-    <Maincard/>
+    <Counter/>
   </div>
 </template>
 
 <script>
 import Homepage from '@/components/Homepage.vue'
-import Maincard from '@/components/Maincard.vue'
+import Counter from '@/components/Counter.vue'
 
 export default {
   name: 'Home',
   components: {
     Homepage,
-    Maincard
+    Counter
   }
 }
 </script>
