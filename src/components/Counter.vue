@@ -2,15 +2,50 @@
 	<div class="counter-container">
 		<div class="counter">
 			<img src="@/assets/coffee.svg" alt="Coffee" class="icon">
-			<h3 data-target="1200" class="count">0</h3>
+			<h3 id="counter" :data-target="counter" class="count">0</h3>
 			<h6>Cups of Coffee</h6>
 		</div>
 	</div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'Counter'
+  name: 'Counter',
+  data: function(){
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    updateDataTarget(){
+      const data_request = {operation: 'get_today_coffee'};
+      axios.post('http://localhost:8888', data_request)
+        .then(response => (this.counter = response.data.counter));
+    },
+    counterAnimation() {
+      const counter = document.getElementById("counter");
+
+      const counterAnimation = () => {
+        const target = this.counter;
+        const count = parseInt(+counter.innerText);
+
+        if (count < target) {
+          counter.innerText = count + 1;
+          setTimeout(counterAnimation, 200);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      counterAnimation();
+    }
+  },
+  mounted(){
+    this.updateDataTarget()
+  },
+  updated(){
+    this.counterAnimation()
+  }
 }
 </script>
 
@@ -35,7 +70,7 @@ export default {
 
 .counter-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 

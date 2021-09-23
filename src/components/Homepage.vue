@@ -1,8 +1,12 @@
 <template>
-  <b-container fluid="sm">
+  <b-container>
     <b-row>
-      <b-col cols="sm-4" class="mx-auto">
-        <b-img class="main_image" src="@/assets/fry.png"></b-img>
+      <b-col>
+        <b-img center class="main_image" src="@/assets/fry.png"></b-img>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
         <div class="heading">{{ msg }}</div>
       </b-col>
     </b-row>
@@ -31,11 +35,6 @@ body {
   background: #fbf7f4;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
-}
-
 .heading {
   text-align: center;
   font-size: 3.5rem;
@@ -45,7 +44,6 @@ body {
 
 .counter-container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -71,5 +69,6 @@ body {
 
 .main_image {
   max-width: 20rem;
+  justify-content: center;
 }
 </style>
